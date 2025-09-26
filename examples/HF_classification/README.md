@@ -89,7 +89,7 @@ To running this project in a centralized learning (CL) setup, modify `examples/c
 - [UCI Cleveland Heart Disease dataset][uci]
 
 [sfl]: https://github.com/tie-set/simple-fl
-[sfl-engine]: https://github.com/tie-set/simple-fl/image_classification/classification_engine.py
+[sfl-engine]: https://github.com/tie-set/simple-fl/examples/image_classification/classification_engine.py
 [sfl-client]: https://github.com/tie-set/simple-fl/fl_main/agent/client.py
 [sfl-helper]: https://github.com/tie-set/simple-fl/fl_main/lib/helper.py
 
