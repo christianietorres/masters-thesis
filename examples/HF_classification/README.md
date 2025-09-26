@@ -2,14 +2,14 @@
 # Federated Learning system for Heart Disease classification
 
 
-This README.md file provides instructions and neccessary information about how to run and navigate this folder to perform heart disease classification in this federated learning (FL) framework. 
+This README.md file provides instructions and neccessary information about how to perform heart disease classification in this federated learning (FL) framework. 
 
-It is worth noting that this code **applies and builds on** TieSet's repositiory, which includes the codebase for simplified federated learning [^1]. The dataset used for performing the heart disease classification task is the **Cleveland Heart Disease** dataset from the UCI Machine Learning Repository [^2]. 
+It is worth noting that this code **applies and builds on** [TieSet's repositiory][sfl], which includes the codebase for simplified federated learning. The dataset used for performing the heart disease classification task is the [Cleveland Heart Disease][uci] dataset from the UCI Machine Learning Repository. 
 
 - **Location for the unprocessed data (in this repository):** `examples\HF_classification\data\heart+disease`
 - **Location for the processed data (output from  prepare_data.py):** `examples\HF_classification\data\clients`
 
-The package `HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's `image_classification`[^1]. In particular, the file `classification_engine.py` is the main entry point, which runs the whole FL setup. The file is inspired from Tieset's `classification_engine.py`, and `client.py` in `fl_main/agent/client.py` and `fl_main/lib/helpers.py` were modified slightly from the original source [^1].
+The package `examples\HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's [`image_classification`][sfl-engine]. In particular, the file `examples\HF_classification\classification_engine.py` is the main entry point, which runs the whole FL setup. The file is inspired from Tieset's [`classification_engine.py`][sfl-engine], and  the files [`fl_main/agent/client.py`][sfl-client] and [`fl_main/lib/helpers.py`][sfl-helper] were modified from TieSet.
 
 ## How to run the project
 
@@ -38,7 +38,7 @@ conda activate federatedenv
 
 ### Data preparation
 
-Before running everything, make sure the data is processed. Based on wheter the system is FL or CL, run **one** of the following:
+Before running everything, make sure the data is processed. Based on whether the system is FL or CL, run **one** of the following:
 
 ```pyton
 python -m examples.HF_classification.prepare_data.py # for federated data distrubution
@@ -77,17 +77,22 @@ python -m examples.HF_classification.classification_engine 1 50002 a2
 ## Optional: centralized learning (CL) setup 
 To running this project in a centralized learning (CL) setup, modify `examples/classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
 
-## Sources
-[^1]: https://github.com/tie-set/simple-fl
-
-[^2]: https://archive.ics.uci.edu/dataset/45/heart+disease
 
 ## Code Sources
-- [tie-set/simple-fl][sfl]
+- Repository: [tie-set/simple-fl][sfl]
+- Files modified:
+  - [`image_classification/classification_engine.py`][sfl-engine]
+  - [`fl_main/agent/client.py`][sfl-client]
+  - [`fl_main/lib/helper.py`][sfl-helper]
 
 ## Other Sources
 - [UCI Cleveland Heart Disease dataset][uci]
 
 [sfl]: https://github.com/tie-set/simple-fl
+[sfl-engine]: https://github.com/tie-set/simple-fl/blob/<commit-or-tag>/image_classification/classification_engine.py
+[sfl-client]: https://github.com/tie-set/simple-fl/blob/<commit-or-tag>/fl_main/agent/client.py
+[sfl-helper]: https://github.com/tie-set/simple-fl/blob/<commit-or-tag>/fl_main/lib/helper.py
+
+  
 [uci]: https://archive.ics.uci.edu/dataset/45/heart+disease
 
