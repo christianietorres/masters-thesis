@@ -78,8 +78,8 @@ python -m examples.HF_classification.classification_engine 1 50002 a2
 To running this project in a centralized learning (CL) setup, modify `examples/classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
 
 ## Code Sources
-- [^1]([https://github.com/tie-set/simple-fl)]
+- [^1]: https://github.com/tie-set/simple-fl
 
 ## Other Sources
-- [^2]([https://archive.ics.uci.edu/dataset/45/heart+disease])
+- [^2]: https://archive.ics.uci.edu/dataset/45/heart+disease
 
