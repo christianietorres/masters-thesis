@@ -9,7 +9,7 @@ It is worth noting that this code **applies and builds on** [TieSet's repositior
 - **Location for the unprocessed data (in this repository):** `examples\HF_classification\data\heart+disease`
 - **Location for the processed data (output from  prepare_data.py):** `examples\HF_classification\data\clients`
 
-The package `examples\HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's [`image_classification`][sfl-engine]. In particular, the file `examples\HF_classification\classification_engine.py` is the main entry point, which runs the whole FL setup. The file is inspired from Tieset's [`classification_engine.py`][sfl-engine], and  the files [`fl_main/agent/client.py`][sfl-client] and [`fl_main/lib/helpers.py`][sfl-helper] were modified from TieSet.
+The package `examples\HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's [`image_classification`][sfl-image]. In particular, the file `examples\HF_classification\classification_engine.py` is the main entry point, which runs the whole FL setup in this project. The file is inspired from Tieset's [`classification_engine.py`][sfl-engine], and  the files [`fl_main/agent/client.py`][sfl-client] and [`fl_main/lib/helpers.py`][sfl-helper] were also modified from TieSet.
 
 ## How to run the project
 
@@ -80,18 +80,15 @@ To running this project in a centralized learning (CL) setup, modify `examples/H
 
 ## Code Sources
 - Repository: [tie-set/simple-fl][sfl]
-- Files modified:
-  - [`image_classification/classification_engine.py`][sfl-engine]
-  - [`fl_main/agent/client.py`][sfl-client]
-  - [`fl_main/lib/helper.py`][sfl-helper]
 
 ## Other Sources
 - [UCI Cleveland Heart Disease dataset][uci]
 
 [sfl]: https://github.com/tie-set/simple-fl
+[sfl-image]: https://github.com/tie-set/simple-fl/blob/master/examples/image_classification
 [sfl-engine]: https://github.com/tie-set/simple-fl/blob/master/examples/image_classification/classification_engine.py
 [sfl-client]: https://github.com/tie-set/simple-fl/blob/master/fl_main/agent/client.py
-[sfl-helper]: https://github.com/tie-set/simple-fl/blob/master/fl_main/lib/helper.py
+[sfl-helper]: https://github.com/tie-set/simple-fl/blob/master/fl_main/lib/util/helpers.py
 
   
 [uci]: https://archive.ics.uci.edu/dataset/45/heart+disease
