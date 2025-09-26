@@ -82,3 +82,12 @@ To running this project in a centralized learning (CL) setup, modify `examples/c
 
 [^2]: https://archive.ics.uci.edu/dataset/45/heart+disease
 
+## Code Sources
+- [tie-set/simple-fl][sfl]
+
+## Other Sources
+- [UCI Cleveland Heart Disease dataset][uci]
+
+[sfl]: https://github.com/tie-set/simple-fl
+[uci]: https://archive.ics.uci.edu/dataset/45/heart+disease
+
