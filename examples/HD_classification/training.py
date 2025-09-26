@@ -57,9 +57,9 @@ class DataManger:
 
         # Load dataset from CSV and separate features and labels
         data_paths = {
-    'CL': "examples/HF_classification/data/CL/whole_data.csv",
-    'a1': "examples/HF_classification/data/clients/client1.csv",
-    'a2': "examples/HF_classification/data/clients/client2.csv",
+    'CL': "examples/HD_classification/data/CL/whole_data.csv",
+    'a1': "examples/HD_classification/data/clients/client1.csv",
+    'a2': "examples/HD_classification/data/clients/client2.csv",
         }
 
         try:
