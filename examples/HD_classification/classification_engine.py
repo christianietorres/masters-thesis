@@ -33,7 +33,7 @@ class CLRunner:
             max_rounds (int): Maximum number of training iterations.
          """
         
-        logging.info('--- This is a demo of HF Classification with Centralized Learning ---')
+        logging.info('--- This is a demo of HD Classification with Centralized Learning ---')
         self.agent_nr = 'CL'
         self.models = None
         self.accuracies = []
@@ -200,7 +200,7 @@ class CLRunner:
 # classification_engine.py
 class FLRunner:
     """
-        A class that runs Federated Learning for Heart Failure (HF) classification.
+        A class that runs Federated Learning for Heart Disease classification.
 
         This class handles communication with a central server, 
         both global and local model training, model evaluation,
