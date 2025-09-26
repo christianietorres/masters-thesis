@@ -1,34 +1,25 @@
 
-# Federated Learning system for Heart Failure classification
+# Federated Learning system for Heart Disease classification
 
 
-This README.md file provides instructions and neccessary information about how to run and navigate this folder to perform Heart failure classification in a federated learning framework. 
+This README.md file provides instructions and neccessary information about how to run and navigate this folder to perform heart disease classification in this federated learning (FL) framework. 
 
-opt: formulate better**************************
+It is worth noting that this code **applies and builds on** TieSet's repositiory, which includes the codebase for simplified federated learning [^1]. The dataset used for performing the heart disease classification task is the **Cleveland Heart Disease** dataset from the UCI Machine Learning Repository [^2]. 
 
-## The Cleveland dataset 
-The dataset used for this classficiation is the Cleveland Heart Disease dataset from the UCI Machine Learning Repository: https://doi.org/10.24432/C52P4X. It consists of 303 samples with 13 features and 1 target feature. The 13 features are age, sex and other heart-related attributes, which makes them vary in data types. The target features is of the integer type and represents how present the heart disease is, with 0 meaning a total absence of the heart disease and the values 1-4 meaning corresponding to the different presence levels of the disease. 
+- **Location for the unprocessed data (in this repository):** `examples\HF_classification\data\heart+disease`
+- **Location for the processed data (output from  prepare_data.py):** `examples\HF_classification\data\clients`
 
-opt:what all the different fetures are*************
-source correctly for the dataet**************** 
-
-
-## The MLP model
-The Multiperceptron (MLP) is the neural network model used for training in this federated learning setup. It consists of 1 input layer, 3 hidden layers and 1 output layer, and they respectively have 13, 64, 32, 16 and 1 or 5 nodes. The last node consist of 1 or 5 nodes depends on if the model executes a binary classification or not. 
-
-opt: better last sentence*****************
+The package `HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's `image_classification`[^1]. In particular, the file `classification_engine.py` is the main entry point, which runs the whole FL setup. The file is inspired from Tieset's `classification_engine.py`, and `client.py` in `fl_main/agent/client.py` and `fl_main/lib/helpers.py` were modified slightly from the original source [^1].
 
 ## How to run the project
 
-### Installation and downloads
-1. Download the folder "simple-fl", which has the simple federated learning setup, from the creator at: https://github.com/tie-set/simple-fl
+### Installation 
+1. Clone this repository, and open a terminal at the repo root
+```bash
+cd /masters-thesis
+```
 
-2. Add this folder in the path "simple-fl\examples" to the downloaded folder "simple-fl" from the step before. 
-
-3. Download the Cleveland Heart Disease dataset from: https://doi.org/10.24432/C52P4X. Add that dataset to "simple-fl/examples/HF_classification/data".
-
-
-4. create a conda environment for the federated learning:
+2. Create a conda environment for the federated learning:
 
 ```
 # for macOS
@@ -38,71 +29,57 @@ conda env create -n federatedenv -f ./setups/federatedenv.yaml
 conda env create -n federatedenv -f ./setups/federatedenv_linux.yaml
 ```
 
-Before running the codes, the environment needs to be activated. You can activate the environment by running the following:
+3. Before running the codes, the environment needs to be activated. You can activate the environment by running the following:
 
 ```
 conda activate federatedenv
 ```
 
-opt: write source correctly*****
-write step 2 and 3 better + better path*************
-opt: better title name*********
-is format 1-4 okay?***************
 
+### Data preparation
 
-
-### Execution
-
-Before running everything, make sure the data is processed and distrubuted between clients by running the following:
+Before running everything, make sure the data is processed. Based on wheter the system is FL or CL, run **one** of the following:
 
 ```pyton
-python -m examples.HF_classification.prepare_data.py
+python -m examples.HF_classification.prepare_data.py # for federated data distrubution
 ```
 
-Run the code below from Ubuntu/Linux terminals. specifically, 4 different Python files need to be run simultaneously from 4 different terminals. Make sure the path is  "\simple-fl" when you run the code files from the terminals. Run the following code snippets in this specific order:
+or 
+```pyton
+python -m examples.HF_classification.prepare_data_CL.py # for centered data when running the CL setup 
+```
+### Execution
+
+Make sure to the current path is  '\simple-fl'. Run the code snippets, each in its own terminal, in the following order:
 
 
-1. For the FL central server 
+1. Pseudo Database in the FL central server.
 ```python
 python -m fl_main.pseudodb.pseudo_db
 ```
 
-2. For the FL central server 
+2. Aggregator in the FL central server .
 ```python
 python -m fl_main.aggregator.server_th
 ```
 
-3. For the first client agent
+3. Client agent 1
 
 ```pyton
 python -m examples.HF_classification.classification_engine 1 50001 a1
 ```
 
-4. For the second client agent
+4.  Client agent 2
 ```
 python -m examples.HF_classification.classification_engine 1 50002 a2
 ```
 
-ubuntu or linux***********
-better path**************
-is format 1-4 okay?************
-better prestep************
+## Optional: centralized learning (CL) setup 
+To running this project in a centralized learning (CL) setup, modify `examples/classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
 
-## Additional Instructions
-Running this project in a centralized learning setup is optional as well. Do small modifications in the "classification_engine.py"-file, by uncommenting the call to the CL() class and CLRunner() class, and comment out the FL() and FLRunner() class. Rememmer to also run "Prepare_data_CL.py" instead of "Prepare_data.py" to make sure all the data is stored in one place when doing centralized learning. 
+## Code Sources
+- [^1]([https://github.com/tie-set/simple-fl)]
 
-
-two last sentence needs editing**
-correct classes?*******
-
-## licene
-
-
-check all * under the titles
-
-is the format correct?**********
-opt: add licene*********
-opt: add configuration file?*************
-opt: add additional instructions********
-
+## Other Sources
+- [^2]([https://archive.ics.uci.edu/dataset/45/heart+disease])
 
