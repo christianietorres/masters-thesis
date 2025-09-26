@@ -6,10 +6,10 @@ This README.md file provides instructions and neccessary information about how t
 
 It is worth noting that this code **applies and builds on** [TieSet's repositiory][sfl], which includes the codebase for simplified federated learning. The dataset used for performing the heart disease classification task is the [Cleveland Heart Disease][uci] dataset from the UCI Machine Learning Repository. 
 
-- **Location for the unprocessed data (in this repository):** `examples\HF_classification\data\heart+disease`
-- **Location for the processed data (output from  prepare_data.py):** `examples\HF_classification\data\clients`
+- **Location for the unprocessed data (in this repository):** `examples\HD_classification\data\heart+disease`
+- **Location for the processed data (output from  prepare_data.py):** `examples\HD_classification\data\clients`
 
-The package `examples\HF_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's [`image_classification`][sfl-image]. In particular, the file `examples\HF_classification\classification_engine.py` is the main entry point, which runs the whole FL setup in this project. The file is inspired from Tieset's [`classification_engine.py`][sfl-engine], and  the files [`fl_main/agent/client.py`][sfl-client] and [`fl_main/lib/helpers.py`][sfl-helper] were also modified from TieSet.
+The package `examples\HD_classification` and its files have been added to specifically exectue heart disease prediction. They are heavily inspired by the code file setup and content in Tieset's [`image_classification`][sfl-image]. In particular, the file `examples\HD_classification\classification_engine.py` is the main entry point, which runs the whole FL setup in this project. The file is inspired from Tieset's [`classification_engine.py`][sfl-engine], and  the files [`fl_main/agent/client.py`][sfl-client] and [`fl_main/lib/helpers.py`][sfl-helper] were also modified from TieSet.
 
 ## How to run the project
 
@@ -41,12 +41,12 @@ conda activate federatedenv
 Before running everything, make sure the data is processed. Based on whether the system is FL or CL, run **one** of the following:
 
 ```pyton
-python -m examples.HF_classification.prepare_data.py # for federated data distrubution
+python -m examples.HD_classification.prepare_data.py # for federated data distrubution
 ```
 
 or 
 ```pyton
-python -m examples.HF_classification.prepare_data_CL.py # for centered data when running the CL setup 
+python -m examples.HD_classification.prepare_data_CL.py # for centered data when running the CL setup 
 ```
 ### Execution
 
@@ -66,16 +66,16 @@ python -m fl_main.aggregator.server_th
 3. Client agent 1
 
 ```pyton
-python -m examples.HF_classification.classification_engine 1 50001 a1
+python -m examples.HD_classification.classification_engine 1 50001 a1
 ```
 
 4.  Client agent 2
 ```
-python -m examples.HF_classification.classification_engine 1 50002 a2
+python -m examples.HD_classification.classification_engine 1 50002 a2
 ```
 
 ## Optional: centralized learning (CL) setup 
-To running this project in a centralized learning (CL) setup, modify `examples/HF_classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
+To running this project in a centralized learning (CL) setup, modify `examples/HD_classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
 
 
 ## Code Sources
