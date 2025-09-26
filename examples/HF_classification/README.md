@@ -75,7 +75,7 @@ python -m examples.HF_classification.classification_engine 1 50002 a2
 ```
 
 ## Optional: centralized learning (CL) setup 
-To running this project in a centralized learning (CL) setup, modify `examples/classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
+To running this project in a centralized learning (CL) setup, modify `examples/HF_classification/classification_engine.py`-file, by uncommenting the call`to the `CL()` and `CLRunner()` classes`, and commenting out the `FL()` and `FLRunner()` classes.
 
 
 ## Code Sources
@@ -89,9 +89,9 @@ To running this project in a centralized learning (CL) setup, modify `examples/c
 - [UCI Cleveland Heart Disease dataset][uci]
 
 [sfl]: https://github.com/tie-set/simple-fl
-[sfl-engine]: https://github.com/tie-set/simple-fl/examples/image_classification/classification_engine.py
-[sfl-client]: https://github.com/tie-set/simple-fl/fl_main/agent/client.py
-[sfl-helper]: https://github.com/tie-set/simple-fl/fl_main/lib/helper.py
+[sfl-engine]: https://github.com/tie-set/simple-fl/tree/master/image_classification/classification_engine.py
+[sfl-client]: https://github.com/tie-set/simple-fl/tree/master/fl_main/agent/client.py
+[sfl-helper]: https://github.com/tie-set/simple-fl/tree/master/fl_main/lib/helper.py
 
   
 [uci]: https://archive.ics.uci.edu/dataset/45/heart+disease
