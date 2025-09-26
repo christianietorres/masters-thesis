@@ -77,7 +77,7 @@ def split_for_clients(input_file: str, binary: bool = True, target_size: int = 2
     logging.info("Client 2 label distribution:\n%s", client2_df[LABEL_COL].value_counts(normalize = True))
 
     # save client dataframets to csv-files
-    CLIENT_DIR = "examples/HF_classification/data/clients/"
+    CLIENT_DIR = "examples/HD_classification/data/clients/"
     CLIENT1_PATH = os.path.join(CLIENT_DIR, "client1.csv")
     CLIENT2_PATH = os.path.join(CLIENT_DIR, "client2.csv")
 
@@ -200,7 +200,7 @@ def preprocess_data(input_file: str, binary: bool = True, target_size: int = 200
 
     return class_0_upsampled, class_1_upsampled, class_2_upsampled, class_3_upsampled, class_4_upsampled   
 
-DATA_PATH = "examples/HF_classification/data/heart+disease/"
+DATA_PATH = "examples/HD_classification/data/heart+disease/"
 CLEVELAND_DATA = os.path.join(DATA_PATH, "processed.cleveland.data")
 
 BINARY = True
