@@ -79,10 +79,10 @@ To running this project in a centralized learning (CL) setup, modify `examples/H
 
 
 ## Code Sources
-- Repository: [tie-set/simple-fl][sfl]
+- TieSet's repository: [tie-set/simple-fl][sfl]
 
 ## Other Sources
-- [UCI Cleveland Heart Disease dataset][uci]
+- Cleveland Heart Disease dataset: [UCI Cleveland Heart Disease dataset][uci]
 
 [sfl]: https://github.com/tie-set/simple-fl
 [sfl-image]: https://github.com/tie-set/simple-fl/blob/master/examples/image_classification
