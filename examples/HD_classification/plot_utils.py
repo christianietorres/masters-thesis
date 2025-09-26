@@ -46,7 +46,7 @@ def save_figure(fig_name: str, agent_nr: str, subfolder: str = "avg") -> None:
     """
     DPI = 300
 
-    path = f"examples/HF_classification/figures/{agent_nr}/{subfolder}/{fig_name}.png"
+    path = f"examples/HD_classification/figures/{agent_nr}/{subfolder}/{fig_name}.png"
     plt.savefig(path, dpi=DPI, bbox_inches='tight')
     plt.show()
     #plt.close() # Uncomment to prevent plot windows from opening
