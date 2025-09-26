@@ -28,7 +28,7 @@ def save_dataframe(class_0_upsampled: pd.DataFrame,
         None
     """
     
-    WHOLE_DATA_PATH = "examples/HF_classification/data/CL/whole_data.csv"
+    WHOLE_DATA_PATH = "examples/HD_classification/data/CL/whole_data.csv"
 
     RANDOM_STATE_1 = 42
     FRAC_IID = 1
@@ -58,7 +58,7 @@ def save_dataframe(class_0_upsampled: pd.DataFrame,
     logging.info(f" - whole data file: {WHOLE_DATA_PATH}")
 
 
-DATA_PATH = "examples/HF_classification/data/heart+disease/"
+DATA_PATH = "examples/HD_classification/data/heart+disease/"
 CLEVELAND_DATA = os.path.join(DATA_PATH, "processed.cleveland.data")
 
 BINARY = False 
